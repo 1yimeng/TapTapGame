@@ -1,0 +1,42 @@
+.square {
+    height: 120px;
+    width: 119px;
+    border-style: solid;
+    border-color: rgb(35, 76, 83);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 250px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(35, 76, 83);
+    border-radius: 7px;
+}
+
+h3, h1 {
+    font-family: "Nunito";
+    text-align: center;
+}
+
+img {
+    border-radius: 7px;
+    border: 3px solid rgb(35, 83, 76);
+}
+
+body {
+    background-color: rgb(85, 137, 141);
+}
+
+.goal{
+    height: 60px;
+    width: 200px;
+    border-style: solid;
+    border-color: rgb(35, 76, 83);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50px;
+}
