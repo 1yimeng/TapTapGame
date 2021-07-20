@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let chosenColour = []
     let goalColour = ""
     let result = 0
-    let currentTime = 0
+    let currentTime = 20
     let high_score = 0
 
     score.textContent = result
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setGoal()
     }
 
-    function gameOver() {
-        alert('Game over! You chose the wrong colour! Your final score is ' + result + '.' + 'The time you used is ' + currentTime + 's.' + 'The highest score right now is ' + high_score + '!')
+    function gamePause() {
+        alert('Wrong Colour!')
     }
 
     function checkColour() {
@@ -51,22 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
             score.textContent = result
             settingUp()
         } else {
-            if (result > high_score) {
-                high_score = result
-            }
-            gameOver()
-            result = 0
-            score.textContent = result
-            currentTime = -0.5
-            timeAlready.textContent = currentTime
-            settingUp()
+            gamePause()
         }
     }
 
     function countUp() {
-        currentTime += 0.5
+        currentTime -= 0.5
         // console.log(currentTime)
         timeAlready.textContent = currentTime
+        if (currentTime === 0) {
+            if (result > high_score) {
+                high_score = result
+            }
+            alert('Game over! Your final score is ' + result + '.' + 'The highest score right now is ' + high_score + '!')
+            result = 0
+            score.textContent = 0
+            currentTime = 20.5
+            timeAlready.textContent = currentTime
+        }
     }
     
     settingUp()
