@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         goalColour = (square[Math.floor(Math.random() * 4)]).style.backgroundColor
         //console.log(goalColour)
         goals.setAttribute("style", "background-color: " + goalColour)
-        return goalColour
     }
 
     function settingUp() {
@@ -50,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
             result += 1
             score.textContent = result
             settingUp()
-        } else {
+        } else { // didnt match
             gamePause()
         }
     }
 
-    function countUp() {
+    function countDown() {
         currentTime -= 0.5
         // console.log(currentTime)
         timeAlready.textContent = currentTime
@@ -68,10 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
             score.textContent = 0
             currentTime = 20.5
             timeAlready.textContent = currentTime
+            settingUp()
         }
     }
     
     settingUp()
-    setInterval(countUp, 500)
+    setInterval(countDown, 500)
 })
 
